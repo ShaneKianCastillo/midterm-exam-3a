@@ -1,11 +1,11 @@
 <?php 
     function getUsers() {
         return [
-            "user1@gmail.com" => "password",
-            "user2@gmail.com" => "password",
-            "user3@gmail.com" => "password",
-            "user4@gmail.com" => "password",
-            "user5@gmail.com" => "password"
+            "user1@email.com" => "password",
+            "user2@email.com" => "password",
+            "user3@email.com" => "password",
+            "user4@email.com" => "password",
+            "user5@email.com" => "password"
         ];
     }
 
