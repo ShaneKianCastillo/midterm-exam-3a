@@ -2,6 +2,6 @@
     session_start();
     session_unset();
     session_destroy();
-    header("Location: http://midterm-web.test/root/");
+    header("Location: http://midterm-exam-3a.test/root/");
     exit();
 ?>
