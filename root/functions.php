@@ -103,4 +103,72 @@
     function getBaseURL() {
         return 'http://dct-ccs-midterm.test/';
     }
+
+    // For students
+
+function validateStudentData($student_data) {
+    $errorArray = [];
+
+    if (empty($student_data['ID'])) {
+        $errorArray['ID'] = 'Student ID is required!';
+    }
+
+    if (empty($student_data['first_name'])) {
+        $errorArray['first_name'] = 'First name is required!';
+    }
+
+    if (empty($student_data['last_name'])) {
+        $errorArray['last_name'] = 'Last name is required!';
+    }
+
+    return $errorArray;
+}
+
+function checkDuplicateStudentData($student_data) {
+    $errors = [];
+
+    // Check for duplicate student ID, first name, or last name
+    foreach ($_SESSION['student_data'] as $existing_student) {
+        if ($existing_student['ID'] == $student_data['ID']) {
+            $errors[] = "A student with this ID already exists.";
+        }
+        
+    }
+
+    return $errors;
+}
+
+function getSelectedStudentIndex($studentID) {
+    if (!isset($_SESSION['student_data'])) {
+        return null;
+    }
+
+    foreach ($_SESSION['student_data'] as $index => $student) {
+        if ($student['ID'] == $studentID) {
+            return $index;
+        }
+    }
+
+    return null;
+}
+
+function getSelectedStudentData($index) {
+    if (isset($_SESSION['student_data'][$index])) {
+        return $_SESSION['student_data'][$index];
+    }
+    return null;
+}
+
+function getSelectedSubjectIndex($subject_code) {
+    if (!isset($_SESSION['subject_data'])) {
+        return null;
+    }
+    foreach ($_SESSION['subject_data'] as $index => $subject) {
+        if ($subject['subject_code'] === $subject_code) {
+            return $index;
+        }
+    }
+    return null;
+}
+
 ?>
