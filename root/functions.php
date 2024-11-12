@@ -2,11 +2,11 @@
 
 function getUsers() {
     return [
-        "admin1@gmail.com" => "pass1",
-        "admin2@gmail.com" => "pass2",
-        "admin3@gmail.com" => "pass3",
-        "admin4@gmail.com" => "pass4",
-        "admin5@gmail.com" => "pass5"
+        "email1@email.com" => "password",
+        "email2@email.com" => "password",
+        "email3@email.com" => "password",
+        "email4@email.com" => "password",
+        "email5@email.com" => "password"
     ];
 }
 
